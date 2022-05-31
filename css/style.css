@@ -217,7 +217,6 @@ section#banner {
 
 .card-content {
     cursor: pointer;
-    transition: opacity 0.2s;
     width: 100%;
     height: 100%;
     display: flex;
@@ -252,6 +251,10 @@ section#banner {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/industrial.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#about {
+    padding: 0;
 }
 
 .about {
@@ -301,9 +304,48 @@ section#banner {
     height: 100%;
 }
 
-.carrousel {
+#paralax {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/paralax-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.paralax-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paralax-content cite {
+    color: var(--honeydew);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.paralax-content p {
+    margin-top: 1rem;
+    color: var(--honeydew);
+}
+
+#carrousel {
     position: relative;
     height: 100%;
+    background-color: var(--eladon-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
 }
 
 .swiper {
@@ -314,7 +356,6 @@ section#banner {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -328,11 +369,87 @@ section#banner {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    position: relative;
 }
 
 .swiper-slide img {
-    display: block;
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--prussin-blue)!important;
+}
+
+#footer {
+    background: var(--prussin-blue);
+    padding: 1rem 0;
+    border-top: 1px solid var(--imperial-red);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.footer-logo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo img {
+    width: 220px;
+    height: 200px;
+}
+
+.footer-menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+    justify-content: center;
+    border-left: var(--imperial-red) 1px solid;
+    border-right: var(--imperial-red) 1px solid;
+}
+
+.menu-footer-itens {
+    list-style: none;
+}
+
+.menu-footer-itens a {
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--honeydew);
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-itens {
+    display: flex;
+    align-items: center;
+    color: var(--honeydew);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-itens i {
+    margin-right: 0.5rem;
 }
