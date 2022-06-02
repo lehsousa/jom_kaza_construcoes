@@ -53,6 +53,6 @@ menuMobile.addEventListener('click', () => {
 menuItens.forEach(e => {
     e.addEventListener('click', () => {
         navbar.classList.toggle('active')
-        09
+        reloadScrollBars()
     })
 })

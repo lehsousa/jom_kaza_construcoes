@@ -101,6 +101,7 @@ h2 {
     height: 200px;
     margin-top: -2rem;
     z-index: 99;
+    filter: drop-shadow(2px 4px 6px #fff);
 }
 
 .navbar .menu {
@@ -247,10 +248,15 @@ section#banner {
     margin-top: 1rem;
 }
 
+#card-1 {
+    transition-duration: .5s;
+}
+
 #card-1:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/residencial.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    transition-duration: .5s;
 }
 
 #card-2 {
@@ -406,7 +412,7 @@ section#banner {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 33% 33% 33%;
     align-items: center;
     justify-content: center;
     gap: 2rem;
@@ -420,6 +426,7 @@ section#banner {
     position: relative;
     border-left: var(--imperial-red) 1px solid;
     border-right: var(--imperial-red) 1px solid;
+    filter: drop-shadow(2px 4px 6px #121212);
 }
 
 .footer-logo img {
@@ -529,6 +536,8 @@ section#banner {
         margin: 0;
         z-index: 9999;
         background-color: var(--eladon-blue);
+        font-size: 3rem;
+        line-height: 2;
     }
     .navbar .menu {
         display: none;
@@ -540,6 +549,9 @@ section#banner {
     }
     .navbar.active .menu .menu-itens {
         padding: 1rem;
+    }
+    .navbar.active .menu .menu-itens a {
+        color: var(--honeydew);
     }
     .about .about-content {
         flex-direction: column;
@@ -560,6 +572,12 @@ section#banner {
     .resume-cards {
         grid-template-columns: 1fr;
     }
+    .swiper-slide img {
+        height: 56px;
+    }
+    .footer-content {
+        gap: 1.3rem;
+    }
     .footer-contact {
         gap: 0;
     }
@@ -567,6 +585,29 @@ section#banner {
 
 @media (max-width:425px) {
     .top-bar {
+        display: none;
+    }
+    .navbar .logo img {
+        width: 108px;
+        height: 100px;
+    }
+    section#cards {
+        padding-bottom: 0;
+    }
+    .about .about-content {
+        gap: 0;
+    }
+    #carrousel {
+        padding: 0;
+        height: 70px;
+    }
+    .swiper-slide img {
+        height: 46px;
+    }
+    .footer-content {
+        grid-template-columns: 50%;
+    }
+    .footer-menu {
         display: none;
     }
 }
