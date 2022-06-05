@@ -60,6 +60,37 @@ h2 {
     background: none;
 }
 
+.btn-top {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 1200px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--honeydew);
+    text-decoration: none;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 999999;
+    border: 1px solid var(--imperial-red);
+    opacity: 0.6;
+}
+
+.btn-top::after {
+    content: "↑";
+    font-size: 32px;
+    font-weight: bolder;
+    color: var(--imperial-red);
+    padding-bottom: 10px;
+    transition: margin-top 250ms;
+}
+
+.btn-top:hover::after {
+    margin-top: -8px;
+}
+
 .top-bar {
     background: var(--prussin-blue);
     padding: 0.5rem 10vw;
@@ -249,30 +280,79 @@ section#banner {
 }
 
 #card-1 {
-    transition-duration: .5s;
+    animation: hover 5s;
+    animation-iteration-count: infinite;
 }
 
-#card-1:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/residencial.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition-duration: .5s;
+@keyframes hover {
+    0% {
+        background: var(--prussin-blue);
+    }
+    25% {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/residencial.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    50% {
+        background: var(--prussin-blue);
+    }
+    75% {
+        background: var(--prussin-blue);
+    }
+    100% {
+        background: var(--prussin-blue);
+    }
 }
 
 #card-2 {
     background-color: var(--eladon-blue);
+    animation: hover2 5s;
+    animation-iteration-count: infinite;
 }
 
-#card-2:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/comercial.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+@keyframes hover2 {
+    0% {
+        background-color: var(--eladon-blue);
+    }
+    25% {
+        background-color: var(--eladon-blue);
+    }
+    50% {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/comercial.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    75% {
+        background: var(--eladon-blue);
+    }
+    100% {
+        background-color: var(--eladon-blue);
+    }
 }
 
-#card-3:hover {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/industrial.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+#card-3 {
+    animation: hover3 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hover3 {
+    0% {
+        background-color: var(--prussin-blue);
+    }
+    25% {
+        background-color: var(--prussin-blue);
+    }
+    50% {
+        background-color: var(--prussin-blue);
+    }
+    75% {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/industrial.webp);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    100% {
+        background: var(--prussin-blue);
+    }
 }
 
 #about {
@@ -426,7 +506,7 @@ section#banner {
     position: relative;
     border-left: var(--imperial-red) 1px solid;
     border-right: var(--imperial-red) 1px solid;
-    filter: drop-shadow(2px 4px 6px #121212);
+    filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.4));
 }
 
 .footer-logo img {
@@ -509,6 +589,9 @@ section#banner {
     .swiper-slide img {
         height: 70px;
     }
+    .btn-top {
+        left: 40px;
+    }
 }
 
 @media (max-width:840px) {
@@ -537,7 +620,8 @@ section#banner {
         z-index: 9999;
         background-color: var(--eladon-blue);
         font-size: 3rem;
-        line-height: 2;
+        line-height: 1.5;
+        overflow: hidden;
     }
     .navbar .menu {
         display: none;
