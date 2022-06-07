@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+:root {
+    --imperial-red: #e63946;
+    --prussin-blue: #1d3557;
+    --eladon-blue: #457b9d;
+    --honeydew: #f1faee;
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.03);
+
+    width: 50vw;
+    padding: 32px 64px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    margin-bottom: 32px;
+}
+
+div.input {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+input,
+button,
+textarea {
+    /* reset appeareance */
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    /* box */
+    width: 100%;
+
+    padding: 16px 0;
+
+    border:none;
+    border-bottom: 1px solid var(--imperial-red);
+
+    background-color: transparent;
+
+    outline: none;
+
+    /* text */
+    color: var(--text-color);
+    font-size: 1em;
+
+}
+
+button {
+    margin-top: 16px;
+    background-color: var(--imperial-red);
+    cursor: pointer;
+}
+
+input ~ label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+
+    color: var(--prussin-blue);
+
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+
+
+.success-message {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.success-message img {
+    height: 320px;
+    width: 320px;
+    margin-bottom: 2rem;
+}
+
+.success-message h1 {
+    color: var(--prussin-blue);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.success-message a {
+    color: var(--prussin-blue);
+    text-decoration: none;
+    border-bottom: 2px solid var(--prussin-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+@media (max-width:1024px) {
+    form {
+        width: 70vw;
+    }
+
+    .form-contact h2{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width:768px) {
+    form {
+        width: 90vw;
+    }
+
+    .form-contact h2{
+        font-size: 2.5rem;
+    }
+}
+
+
+@media (max-width:425px) {
+    form {
+        width: 100vw;
+    }
+
+    .form-contact h2{
+        font-size: 2rem;
+    }
+}

@@ -39,9 +39,34 @@ h2 {
     color: var(--prussin-blue);
     font-weight: 700;
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
     font-family: 'Roboto Slab', serif;
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: var(--imperial-red);
+    left: 50%;
+    bottom: -0.4rem;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 100px;
+    }
+    50% {
+        width: 200px;
+    }
+    100% {
+        width: 100px;
+    }
 }
 
 .whats {
@@ -171,13 +196,49 @@ h2 {
     width: 100%;
 }
 
-.navbar .menu-mobile {
+.menu-mobile {
     width: 2rem;
     height: 2rem;
-    background: var(--imperial-red);
-    cursor: pointer;
     display: none;
     overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-mobile span {
+    position: absolute;
+    display: block;
+    height: 0.3rem;
+    width: 100%;
+    border-radius: 3rem;
+    background-color: var(--imperial-red);
+    transition: 0.25s ease-in-out;
+}
+
+.navbar .menu-mobile span:nth-child(1) {
+    top: 0;
+}
+
+.navbar .menu-mobile span:nth-child(2) {
+    top: 0.5rem;
+}
+
+.navbar .menu-mobile span:nth-child(3) {
+    top: 1rem;
+}
+
+.navbar.active .menu-mobile span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 1rem;
+}
+
+.navbar.active .menu-mobile span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar.active .menu-mobile span:nth-child(3) {
+    transform: rotate(45deg);
+    top: 1rem;
 }
 
 .banner {
@@ -436,6 +497,10 @@ section#banner {
 .paralax-content p {
     margin-top: 1rem;
     color: var(--honeydew);
+}
+
+#services {
+    padding-top: 2rem;
 }
 
 #carrousel {
