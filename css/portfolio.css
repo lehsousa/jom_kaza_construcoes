@@ -153,44 +153,74 @@ label:hover {
     transition: .5s;
 }
 
-#check2:checked~.container .photo-gallery .family {
+#check2:checked~.container .photo-gallery .comercial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check2:checked~.container .photo-gallery .child,
-#check2:checked~.container .photo-gallery .place {
+#check2:checked~.container .photo-gallery .industrial,
+#check2:checked~.container .photo-gallery .residencial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
 }
 
-#check3:checked~.container .photo-gallery .child {
+#check3:checked~.container .photo-gallery .industrial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check3:checked~.container .photo-gallery .family,
-#check3:checked~.container .photo-gallery .place {
+#check3:checked~.container .photo-gallery .comercial,
+#check3:checked~.container .photo-gallery .residencial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
 }
 
-#check4:checked~.container .photo-gallery .place {
+#check4:checked~.container .photo-gallery .residencial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check4:checked~.container .photo-gallery .family,
-#check4:checked~.container .photo-gallery .child {
+#check4:checked~.container .photo-gallery .comercial,
+#check4:checked~.container .photo-gallery .industrial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
+}
+
+@media(max-width:1024px) {
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:768px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    label {
+        margin: 0 10px;
+    }
+}
+
+@media(max-width:425px) {
+    .photo-gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .top-content {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    label {
+        margin: auto;
+        line-height: 40px;
+    }
 }
