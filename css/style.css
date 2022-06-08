@@ -98,7 +98,7 @@ h2::before {
     text-decoration: none;
     justify-content: center;
     border-radius: 50%;
-    z-index: 999999;
+    z-index: 999;
     border: 1px solid var(--imperial-red);
     opacity: 0.6;
 }
