@@ -210,7 +210,7 @@ label:hover {
     }
 }
 
-@media(max-width:425px) {
+@media(max-width:560px) {
     .photo-gallery {
         grid-template-columns: repeat(1, 1fr);
     }
