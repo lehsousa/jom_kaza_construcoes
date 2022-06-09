@@ -211,6 +211,9 @@ label:hover {
 }
 
 @media(max-width:560px) {
+    .top-bar {
+        display: none;
+    }
     .photo-gallery {
         grid-template-columns: repeat(1, 1fr);
     }
