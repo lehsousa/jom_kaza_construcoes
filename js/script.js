@@ -57,49 +57,5 @@ menuItens.forEach(e => {
     })
 })
 
-const firstCard = document.querySelector('#card-1')
-const secondCard = document.querySelector('#card-2')
-const thirdCard = document.querySelector('#card-3')
 
-function changeFirstCard() {
-    if ((state = true)) {
-        firstCard.style.background = '#1d3557'
-    } else {
-        firstCard.style.background =
-            'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/residencial.webp)'
-        firstCard.style.backgroundRepeat = 'no-repeat'
-        firstCard.style.backgroundSize = 'cover'
-    }
-}
 
-function changeSecondCard() {
-    secondCard.style.background =
-        'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/comercial.webp)'
-    secondCard.style.backgroundRepeat = 'no-repeat'
-    secondCard.style.backgroundSize = 'cover'
-}
-
-function changeThirdCard() {
-    thirdCard.style.background =
-        'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/industrial.webp)'
-    thirdCard.style.backgroundRepeat = 'no-repeat'
-    thirdCard.style.backgroundSize = 'cover'
-}
-
-let imagens = document.querySelectorAll('.small_img')
-let modal = document.querySelector('.modal')
-let modalImg = document.querySelector('#modal_img')
-let btClose = document.querySelector('#bt_close')
-let srcVal = ''
-
-for (let i = 0; i < imagens.length; i++) {
-    imagens[i].addEventListener('click', function() {
-        srcVal = imagens[i].getAttribute('src')
-        modalImg.setAttribute('src', srcVal)
-        modal.classList.toggle('modal_active')
-    })
-}
-
-btClose.addEventListener('click', function() {
-    modal.classList.toggle('modal_active')
-})

@@ -41,7 +41,7 @@ h1::before {
     }
 }
 
-.gallery {
+.photo-gallery {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +84,7 @@ label:hover {
     color: black;
 }
 
-.photo-gallery {
+.gallery {
     width: 90%;
     margin: auto;
     display: grid;
@@ -146,49 +146,49 @@ label:hover {
     opacity: 1;
 }
 
-#check1:checked~.container .photo-gallery .pic {
+#check1:checked~.container .gallery .pic {
     opacity: 1;
     transform: scale(1);
     position: relative;
     transition: .5s;
 }
 
-#check2:checked~.container .photo-gallery .comercial {
+#check2:checked~.container .gallery .comercial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check2:checked~.container .photo-gallery .industrial,
-#check2:checked~.container .photo-gallery .residencial {
+#check2:checked~.container .gallery .industrial,
+#check2:checked~.container .gallery .residencial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
 }
 
-#check3:checked~.container .photo-gallery .industrial {
+#check3:checked~.container .gallery .industrial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check3:checked~.container .photo-gallery .comercial,
-#check3:checked~.container .photo-gallery .residencial {
+#check3:checked~.container .gallery .comercial,
+#check3:checked~.container .gallery .residencial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
     transition: .0s;
 }
 
-#check4:checked~.container .photo-gallery .residencial {
+#check4:checked~.container .gallery .residencial {
     opacity: 1;
     transform: scale(1);
     position: relative;
 }
 
-#check4:checked~.container .photo-gallery .comercial,
-#check4:checked~.container .photo-gallery .industrial {
+#check4:checked~.container .gallery .comercial,
+#check4:checked~.container .gallery .industrial {
     opacity: 0;
     transform: scale(0);
     position: absolute;
@@ -196,13 +196,13 @@ label:hover {
 }
 
 @media(max-width:1024px) {
-    .photo-gallery {
+    .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media(max-width:768px) {
-    .photo-gallery {
+    .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
     label {
@@ -214,7 +214,7 @@ label:hover {
     .top-bar {
         display: none;
     }
-    .photo-gallery {
+    .gallery {
         grid-template-columns: repeat(1, 1fr);
     }
     .top-content {
@@ -226,4 +226,108 @@ label:hover {
         margin: auto;
         line-height: 40px;
     }
+}
+
+
+.gallery .image span{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.gallery .image img{
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.preview-box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  z-index: 5;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 3px;
+  padding: 0 5px 5px 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+.preview-box.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.3s ease;
+}
+.preview-box .details{
+  display: flex;
+  align-items: center;
+  padding: 12px 15px 12px 10px;
+  justify-content: space-between;
+}
+.preview-box .details .title{
+  display: flex;
+  font-size: 18px;
+  font-weight: 400;
+}
+.details .title p{
+  margin: 0 5px;
+}
+.details .title p.current-img{
+  font-weight: 500;
+}
+.details .icon{
+  color: #007bff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.preview-box .image-box{
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.image-box .slide{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 30px;
+  cursor: pointer;
+  height: 50px;
+  width: 60px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 3px;
+}
+.slide.prev{
+  left: 0px;
+}
+.slide.next{
+  right: 0px;
+}
+.image-box img{
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+}
+.shadow{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  display: none;
+  background: rgba(0,0,0,0.45);
+}
+@media(max-width: 1000px){
+  .gallery .image{
+    width: calc(100% / 2);
+  }
+}
+@media(max-width: 600px){
+  .gallery .image{
+    width: 100%;
+    padding: 4px;
+  }
 }
